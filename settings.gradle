@@ -1,0 +1,2 @@
+rootProject.name = "Gits_Task_Adnia"
+include ':app'
