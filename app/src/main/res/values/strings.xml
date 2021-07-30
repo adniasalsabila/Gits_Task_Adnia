@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Gits_Task_Adnia</string>
     <string name="check">check</string>
-    <string name="result">not divisible by 3 and 5</string>
+    <string name="result"> </string>
     <string name="input_number">Input Number</string>
-    <string name="title_text">Task 1 : Check Modulo 3 and 5</string>
+    <string name="title_text">Task 5: Palindrome Check</string>
 </resources>
