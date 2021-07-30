@@ -18,21 +18,28 @@ class MainActivity : AppCompatActivity() {
 
         buttonSubmit.setOnClickListener(View.OnClickListener {
             val text = editText.text.toString().trim()
-            if (isPalindrome(text)) {
-                textView.text =("$text is a True Palindrome")
-            } else {
-                textView.text =("$text is a False Palindrome")
-            }
+            val textReverse = isReverse(text)
+            textView.text = ("Original Text = $text => Reverse Text = $textReverse")
+
         })
     }
 
-    fun isPalindrome(str: String): Boolean {
-        val stringBuilder = StringBuilder(str)
-
-        val reverseStr = stringBuilder.reverse().toString()
-
-        return str.equals(reverseStr, ignoreCase = true)
+    fun isReverse(str: String): String {
+        var i = str.length - 1
+        var start: Int
+        var end = i + 1
+        var result = ""
+        while (i >= 0) {
+            if (str[i] == ' ') {
+                start = i + 1
+                while (start != end) result += str[start++]
+                result += ' '.toString()
+                end = i
+            }
+            i--
+        }
+        start = 0
+        while (start != end) result += str[start++]
+        return result
     }
-
-
 }
