@@ -18,28 +18,23 @@ class MainActivity : AppCompatActivity() {
 
         buttonSubmit.setOnClickListener(View.OnClickListener {
             val text = editText.text.toString().trim()
-            val textReverse = isReverse(text)
-            textView.text = ("Original Text = $text => Reverse Text = $textReverse")
+            val timeConvert= timeConverter(text)
+            textView.text = ("Result $timeConvert")
 
         })
     }
 
-    fun isReverse(str: String): String {
-        var i = str.length - 1
-        var start: Int
-        var end = i + 1
-        var result = ""
-        while (i >= 0) {
-            if (str[i] == ' ') {
-                start = i + 1
-                while (start != end) result += str[start++]
-                result += ' '.toString()
-                end = i
-            }
-            i--
+    fun timeConverter(str: String): String {
+        var timeBefore = str.substringBeforeLast(":").toInt()
+        val timeAfter = str.substringAfterLast(":").dropLast(3)
+        val result = str.substringAfterLast(" ")
+
+        if (result.contains("AM",true) && timeBefore == 12){
+            timeBefore-=12
         }
-        start = 0
-        while (start != end) result += str[start++]
-        return result
+        if (result.contains("PM",true) && timeBefore < 12){
+            timeBefore+=12
+        }
+        return "$timeBefore:$timeAfter"
     }
 }
