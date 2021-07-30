@@ -19,8 +19,13 @@ class MainActivity : AppCompatActivity() {
                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
                     "(" +
                     "\\." +
-                    "\\.id" +
-                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                    "?.id" +
+                    "|."+
+                    "("+
+                    "co"+
+                    "\\."+
+                    "id"+
+                    ")"+
                     ")+"
         )
         val editText = findViewById<EditText>(R.id.input_email)
