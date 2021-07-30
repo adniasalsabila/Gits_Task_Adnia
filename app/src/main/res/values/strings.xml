@@ -2,6 +2,6 @@
     <string name="app_name">Gits_Task_Adnia</string>
     <string name="check">check</string>
     <string name="result"> </string>
-    <string name="input_number">Input Number</string>
-    <string name="title_text">Task 4: Reverse Text</string>
+    <string name="input_number">Input Time</string>
+    <string name="title_text">Task 3: Time Format Converter</string>
 </resources>
